@@ -1,0 +1,10 @@
+{
+    "name": "ivko/xoad",
+    "description": "forked from StanAngeloff/XOAD",
+    "keywords": [],
+    "autoload": {
+        "psr-0": {
+            "XOAD": "classes/"
+        }
+    }
+}

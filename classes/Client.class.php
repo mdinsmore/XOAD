@@ -157,7 +157,7 @@ class XOAD_Client extends XOAD_Observable
 
 			if (method_exists($var, XOAD_CLIENT_METADATA_METHOD_NAME)) {
 
-				call_user_func_array(array(&$var, XOAD_CLIENT_METADATA_METHOD_NAME), null);
+				call_user_func_array(array(&$var, XOAD_CLIENT_METADATA_METHOD_NAME), array());
 			}
 
 			$objectCode = array();

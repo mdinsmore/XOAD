@@ -508,11 +508,9 @@ xoad.call = function(obj, method, callArguments)
 
 	try {
 
-		xmlHttp.setRequestHeader('Content-Length', requestBody.length);
-
+        xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        
 		xmlHttp.setRequestHeader('Content-Type', 'text/plain; charset=UTF-8');
-
-		xmlHttp.setRequestHeader('Accept-Charset', 'UTF-8');
 
 	} catch (e) {}
 
@@ -795,11 +793,9 @@ xoad.dispatchEvents = function()
 
 	try {
 
-		xmlHttp.setRequestHeader('Content-Length', requestBody.length);
-
+        xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        
 		xmlHttp.setRequestHeader('Content-Type', 'text/plain; charset=UTF-8');
-
-		xmlHttp.setRequestHeader('Accept-Charset', 'UTF-8');
 
 	} catch (e) {}
 
@@ -960,11 +956,10 @@ xoad.postEvent = function(obj, eventArguments)
 
 	try {
 
-		xmlHttp.setRequestHeader('Content-Length', requestBody.length);
-
+        xmlHttp.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+        
 		xmlHttp.setRequestHeader('Content-Type', 'text/plain; charset=UTF-8');
 
-		xmlHttp.setRequestHeader('Accept-Charset', 'UTF-8');
 
 	} catch (e) {}
 
@@ -1012,4 +1007,17 @@ xoad.notifyObservers = function(event)
 	}
 
 	return true;
+};
+
+xoad.env = {
+	options: {},
+	get: function(key) {
+		if (typeof this.options[key] == 'undefined') {
+			return null;
+		}
+	   return this.options[key];
+	},
+	set: function(key, value) {
+		this.options[key] = value;
+	}
 };

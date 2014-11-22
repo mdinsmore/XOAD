@@ -304,7 +304,7 @@ class XOAD_Server extends XOAD_Observable
 
 					if (method_exists($requestBody['source'], XOAD_CLIENT_METADATA_METHOD_NAME)) {
 
-						call_user_func_array(array(&$requestBody['source'], XOAD_CLIENT_METADATA_METHOD_NAME), null);
+						call_user_func_array(array(&$requestBody['source'], XOAD_CLIENT_METADATA_METHOD_NAME), array());
 
 						if (isset($requestBody['source']->xoadMeta)) {
 
