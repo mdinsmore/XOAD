@@ -3,8 +3,8 @@
     "description": "forked from StanAngeloff/XOAD",
     "keywords": [],
     "autoload": {
-        "psr-0": {
-            "XOAD": "classes/"
-        }
+        "files": [
+            "xoad.php"
+        ]
     }
 }
