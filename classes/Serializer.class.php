@@ -82,7 +82,7 @@ class XOAD_Serializer extends XOAD_Observable
 	 * @static
 	 *
 	 */
-	public static function serialize(&$var)
+	public static function serialize($var)
 	{
 		$type = XOAD_Utilities::getType($var);
 
