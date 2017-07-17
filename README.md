@@ -18,7 +18,7 @@ And more:
 Tutorial
 --------
 
-XOAD's tutorial (as seen in `docs/tutorials/`) is [available online](http://stanangeloff.github.com/XOAD/). Note the class reference is not available online and is part of the download only.
+XOAD's tutorial (as seen in `docs/tutorials/`) is [available online](http://ivko.github.com/XOAD/). Note the class reference is not available online and is part of the download only.
 
 NOTE on XOAD's license:
 ----------------------
