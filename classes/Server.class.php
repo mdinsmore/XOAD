@@ -145,13 +145,21 @@ class XOAD_Server extends XOAD_Observable
 		if (isset($_GET['xoadCall'])) {
 
 			if (strcasecmp($_GET['xoadCall'], 'true') == 0) {
+                
+                if (version_compare(PHP_VERSION, '5.6.0', '<') && isset($HTTP_RAW_POST_DATA)) {
 
-				if ( ! isset($GLOBALS['HTTP_RAW_POST_DATA'])) {
+                    $request = $HTTP_RAW_POST_DATA;
+                } else {
+
+                    $request = file_get_contents('php://input');
+                }
+
+				if ( empty( $request ) ) {
 
 					return false;
 				}
 
-				$requestBody = @unserialize($GLOBALS['HTTP_RAW_POST_DATA']);
+				$requestBody = @unserialize($request);
 
 				if ($requestBody == null) {
 
@@ -474,11 +482,11 @@ class XOAD_Server extends XOAD_Observable
 	 * @static
 	 *
 	 */
-	public static function handleError($type, $message)
+	public static function handleError($type, $message, $errfile = null, $errline = null)
 	{
 		if (error_reporting()) {
 
-			if ( ! XOAD_Server::notifyObservers('handleErrorEnter', array('type' => &$type, 'message' => &$message))) {
+			if ( ! XOAD_Server::notifyObservers('handleErrorEnter', array('type' => &$type, 'message' => &$message, 'errfile' => &$errfile, 'errline' => &$errline))) {
 
 				return false;
 			}
