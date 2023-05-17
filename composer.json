@@ -1,6 +1,6 @@
 {
-    "name": "ivko/xoad",
-    "description": "forked from StanAngeloff/XOAD",
+    "name": "mdinsmore/xoad",
+    "description": "forked from ivko/XOAD which is a fork of StanAngeloff/XOAD",
     "keywords": [],
     "autoload": {
         "files": [
